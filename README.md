@@ -4,7 +4,7 @@ My personal portfolio: projects, experience, publications and CV.
 
 **Live site:** https://kalinchkma.github.io/kalinchakma/
 
-Built with [Jekyll](https://jekyllrb.com/) on the [al-folio](https://github.com/alshedivat/al-folio) starter (v1.x), with a custom design. Deployed to GitHub Pages by GitHub Actions.
+Built with [Jekyll](https://jekyllrb.com/) on the [al-folio](https://github.com/alshedivat/al-folio) starter (v1.x), with a custom design. Deployed to GitHub Pages by GitHub Actions (`.github/workflows/jekyll.yml`).
 
 ---
 
@@ -35,9 +35,9 @@ Built with [Jekyll](https://jekyllrb.com/) on the [al-folio](https://github.com/
 
 1. Edit a file, either on github.com (open the file and click the ✏️ pencil) or locally in your editor.
 2. Commit and push to `main`.
-3. GitHub Actions rebuilds the site (**Actions → Deploy site**). It's live 2–4 minutes later.
+3. GitHub Actions rebuilds the site (**Actions → Deploy Jekyll site to Pages**). It's live 2–4 minutes later.
 
-That's all. Never edit the `gh-pages` branch by hand: it's generated automatically.
+That's all. Pull requests to `main` are built but not deployed, so you can check a change compiles before merging it.
 
 ---
 
@@ -226,10 +226,9 @@ Stop it with `Ctrl+C`, or run `docker compose down`.
 You only need to do this once.
 
 1. **The repo must be public** (free accounts can't publish GitHub Pages from a private repo): **Settings → General → Danger Zone → Change visibility → Public**.
-2. **Settings → Actions → General → Workflow permissions** → choose **Read and write permissions** → Save.
-3. Push to `main` and wait for **Actions → Deploy site** to finish (green ✓). This creates the `gh-pages` branch.
-4. **Settings → Pages → Build and deployment**: Source **Deploy from a branch**, Branch **`gh-pages`** / **`(root)`** → Save.
-5. Your site is live at **https://kalinchkma.github.io/kalinchakma/** within a minute or two.
+2. **Settings → Pages → Build and deployment → Source: GitHub Actions.**
+3. Push to `main`, or open **Actions → Deploy Jekyll site to Pages → Run workflow**. Wait for both jobs (`build`, `deploy`) to show a green ✓.
+4. Your site is live at **https://kalinchkma.github.io/kalinchakma/**. The deploy job also shows the link.
 
 ### Want the shorter URL `https://kalinchkma.github.io/`?
 
@@ -243,7 +242,7 @@ You only need to do this once.
    ```bash
    git remote set-url origin git@github.com:kalinchkma/kalinchkma.github.io.git
    ```
-4. Push. Local preview is then at http://localhost:8080/.
+4. Push. The workflow picks up the new path automatically. Local preview is then at http://localhost:8080/.
 
 ---
 
@@ -275,9 +274,8 @@ More detail: [`docs/INSTALL.md`](docs/INSTALL.md), [`docs/CUSTOMIZE.md`](docs/CU
 | Problem                                         | Fix                                                                                                                       |
 | ----------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------- |
 | Site has no styling / links are broken          | `url` and `baseurl` in `_config.yml` don't match the repo name. See [First-time setup](#first-time-github-pages-setup). |
-| Pushed but nothing changed                      | Check **Actions → Deploy site** for a red ✗ and open the log. Then hard-refresh the browser (`Cmd+Shift+R`).               |
-| Deploy fails with a permission error            | Settings → Actions → General → Workflow permissions → **Read and write**.                                                 |
-| 404 at the site URL                             | Settings → Pages: the branch must be `gh-pages`, not `main`.                                                              |
+| Pushed but nothing changed                      | Check **Actions → Deploy Jekyll site to Pages** for a red ✗ and open the log. Then hard-refresh the browser (`Cmd+Shift+R`). Pushes that only change `README.md` or `docs/` don't trigger a deploy. |
+| `deploy` job fails / "Get Pages site failed"    | Settings → Pages → Source must be **GitHub Actions**.                                                                     |
 | A feature doesn't show and there's no error     | It needs both its gem in `Gemfile` and its entry under `plugins:` in `_config.yml`, and its `enable_*` flag on.           |
 
 ---
