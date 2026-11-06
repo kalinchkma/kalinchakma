@@ -1,3 +1,5 @@
+> **Note for this repo:** this is a personal site generated from the al-folio starter. Its baseurl is `/kalinchakma` (not `/al-folio`), and local overrides such as `assets/css/main.scss` are intentional. See `CLAUDE.md` and `README.md`.
+
 # Agent Guidelines for al-folio (v1.x)
 
 **This file is the authoritative entry point for coding agents working in this repo.** Read it before making any change. It is intentionally short and tool-neutral; it links to the one place each longer-form fact lives.

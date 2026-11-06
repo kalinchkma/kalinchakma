@@ -1,9 +1,4 @@
-"AJP":
-  url: https://aapt.scitation.org/journal/ajp
-  color: "#00369f"
-
-"PhysRev":
-  url: https://journals.aps.org/
-
-"Vision":
-  color: "#009f36"
+# Colors / links for the small badge shown next to a publication (the `abbr` field in papers.bib).
+"DiB":
+  url: https://www.sciencedirect.com/journal/data-in-brief
+  color: "#0f766e"

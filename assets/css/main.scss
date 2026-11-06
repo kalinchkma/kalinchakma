@@ -1,0 +1,520 @@
+---
+# Local override of al_folio_core's assets/css/main.scss.
+# The theme partials are loaded first, unchanged; the custom design below is
+# layered on top. To retheme the site, edit the tokens in the "Design tokens"
+# section; the rest of the file only reads them.
+---
+@charset "utf-8";
+
+@use "sass:math";
+@use "sass:string";
+
+@use "variables" with (
+  $max-content-width: {{ site.max_width | default:  "930px" }}
+);
+
+@use "themes";
+@use "layout";
+
+@use "typography";
+@use "navbar";
+@use "footer";
+@use "blog";
+@use "publications";
+@use "components";
+@use "utilities";
+
+@use "tabs";
+@use "teachings";
+@use "typograms";
+
+/*******************************************************************************
+ * Kalin Chakma: custom design layer
+ ******************************************************************************/
+
+/* ---------- Design tokens ---------- */
+:root {
+  --kc-font-body: "Inter", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --kc-font-head: "Space Grotesk", "Inter", system-ui, sans-serif;
+  --kc-font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, monospace;
+  --kc-radius: 14px;
+
+  --kc-accent: #0d9488; /* teal */
+  --kc-accent-2: #d97706; /* amber */
+  --kc-accent-soft: rgba(13, 148, 136, 0.1);
+  --kc-border: rgba(21, 23, 28, 0.1);
+  --kc-shadow: 0 1px 2px rgba(16, 24, 40, 0.04), 0 8px 24px -12px rgba(16, 24, 40, 0.12);
+  --kc-nav-bg: rgba(246, 245, 241, 0.78);
+
+  --global-bg-color: #f6f5f1;
+  --global-text-color: #15171c;
+  --global-text-color-light: #5f6672;
+  --global-theme-color: var(--kc-accent);
+  --global-hover-color: var(--kc-accent);
+  --global-hover-text-color: #ffffff;
+  --global-card-bg-color: #ffffff;
+  --global-divider-color: var(--kc-border);
+  --global-code-bg-color: rgba(13, 148, 136, 0.08);
+  --global-highlight-color: var(--kc-accent-2);
+  --global-footer-bg-color: transparent;
+  --global-footer-text-color: #5f6672;
+  --global-footer-link-color: #15171c;
+}
+
+html[data-theme="dark"] {
+  --kc-accent: #2dd4bf;
+  --kc-accent-2: #fbbf24;
+  --kc-accent-soft: rgba(45, 212, 191, 0.12);
+  --kc-border: rgba(228, 231, 236, 0.1);
+  --kc-shadow: 0 1px 2px rgba(0, 0, 0, 0.3), 0 12px 32px -16px rgba(0, 0, 0, 0.6);
+  --kc-nav-bg: rgba(11, 15, 20, 0.72);
+
+  --global-bg-color: #0b0f14;
+  --global-text-color: #e4e7ec;
+  --global-text-color-light: #8b95a5;
+  --global-theme-color: var(--kc-accent);
+  --global-hover-color: var(--kc-accent);
+  --global-hover-text-color: #0b0f14;
+  --global-card-bg-color: #121821;
+  --global-divider-color: var(--kc-border);
+  --global-code-bg-color: #121821;
+  --global-highlight-color: var(--kc-accent-2);
+  --global-footer-bg-color: transparent;
+  --global-footer-text-color: #8b95a5;
+  --global-footer-link-color: #e4e7ec;
+}
+
+/* ---------- Base ---------- */
+body {
+  font-family: var(--kc-font-body);
+  font-size: 1rem;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  background-color: var(--global-bg-color);
+  background-image: radial-gradient(var(--kc-border) 1px, transparent 1px);
+  background-size: 22px 22px;
+  background-attachment: fixed;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.card-title,
+.post-title {
+  font-family: var(--kc-font-head);
+  letter-spacing: -0.02em;
+}
+
+code,
+pre,
+kbd {
+  font-family: var(--kc-font-mono);
+}
+
+::selection {
+  background: var(--kc-accent);
+  color: var(--global-bg-color);
+}
+
+a {
+  text-underline-offset: 3px;
+}
+
+/* ---------- Navbar ---------- */
+#navbar.navbar {
+  background: var(--kc-nav-bg) !important;
+  backdrop-filter: saturate(160%) blur(12px);
+  -webkit-backdrop-filter: saturate(160%) blur(12px);
+  border-bottom: 1px solid var(--kc-border);
+  box-shadow: none;
+}
+
+.navbar.navbar-light {
+  .navbar-brand {
+    font-family: var(--kc-font-head);
+    font-weight: 500;
+    letter-spacing: -0.01em;
+
+    span {
+      color: var(--kc-accent);
+    }
+  }
+
+  .navbar-nav .nav-item .nav-link {
+    font-family: var(--kc-font-mono);
+    font-size: 0.85rem;
+    text-transform: lowercase;
+    padding-left: 0.7rem;
+    padding-right: 0.7rem;
+    position: relative;
+  }
+
+  .navbar-nav .nav-item:not(.toggle-container) > .nav-link::before {
+    content: "./";
+    color: var(--global-text-color-light);
+    opacity: 0;
+    margin-right: 1px;
+    transition: opacity 0.15s ease;
+  }
+
+  .navbar-nav .nav-item > .nav-link:hover::before,
+  .navbar-nav .nav-item.active > .nav-link::before {
+    opacity: 1;
+  }
+
+  .navbar-nav .nav-item.active > .nav-link {
+    font-weight: 600;
+    color: var(--kc-accent);
+  }
+}
+
+#progress::-webkit-progress-value {
+  background-color: var(--kc-accent);
+}
+
+#progress::-moz-progress-bar {
+  background-color: var(--kc-accent);
+}
+
+/* ---------- Page headers ---------- */
+.post-header {
+  margin-bottom: 1.75rem;
+}
+
+.post .post-header .post-title,
+.post-title {
+  font-size: clamp(2.2rem, 6vw, 3.4rem);
+  font-weight: 700;
+  line-height: 1.1;
+}
+
+.post-header .post-title .font-weight-bold {
+  background: linear-gradient(110deg, var(--kc-accent) 0%, var(--kc-accent-2) 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.post-header .desc,
+.post-description {
+  font-family: var(--kc-font-mono);
+  font-size: 0.9rem;
+  color: var(--global-text-color-light);
+  margin-top: 0.75rem;
+
+  &::before {
+    content: "> ";
+    color: var(--kc-accent);
+    font-weight: 700;
+  }
+}
+
+/* Section headings on the home page ("news", "selected publications", ...) */
+.post article > h2,
+.projects h2.category {
+  font-family: var(--kc-font-mono);
+  font-size: 0.85rem !important;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.14em;
+  color: var(--global-text-color-light);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 2.75rem;
+  margin-bottom: 1rem;
+
+  &::before {
+    content: "#";
+    color: var(--kc-accent);
+  }
+
+  &::after {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: var(--kc-border);
+  }
+
+  a {
+    color: inherit !important;
+  }
+}
+
+.projects h2.category {
+  border-bottom: 0;
+  text-align: left;
+}
+
+/* ---------- Home page ---------- */
+.kc-lead {
+  font-family: var(--kc-font-head);
+  font-size: 1.35rem;
+  line-height: 1.5;
+  font-weight: 400;
+  margin-bottom: 1.25rem;
+
+  strong {
+    font-weight: 600;
+    background: linear-gradient(transparent 62%, var(--kc-accent-soft) 62%);
+  }
+}
+
+.kc-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1.5rem 0 0.5rem;
+
+  span {
+    font-family: var(--kc-font-mono);
+    font-size: 0.78rem;
+    padding: 0.3rem 0.7rem;
+    border-radius: 999px;
+    border: 1px solid var(--kc-border);
+    background: var(--global-card-bg-color);
+    color: var(--global-text-color);
+    transition:
+      border-color 0.15s ease,
+      color 0.15s ease;
+
+    &:hover {
+      border-color: var(--kc-accent);
+      color: var(--kc-accent);
+    }
+  }
+}
+
+.profile {
+  .more-info {
+    font-family: var(--kc-font-mono);
+    font-size: 0.8rem;
+    text-align: left;
+  }
+
+  img {
+    border: 1px solid var(--kc-border);
+    box-shadow: var(--kc-shadow) !important;
+  }
+}
+
+.kc-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.35rem 0.75rem;
+  border: 1px solid var(--kc-border);
+  border-radius: 999px;
+  background: var(--global-card-bg-color);
+  margin: 0;
+}
+
+.kc-dot {
+  display: inline-block;
+  flex: none;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #22c55e;
+  box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.6);
+  animation: kc-pulse 2s infinite;
+}
+
+@keyframes kc-pulse {
+  0% {
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.55);
+  }
+  70% {
+    box-shadow: 0 0 0 8px rgba(34, 197, 94, 0);
+  }
+  100% {
+    box-shadow: 0 0 0 0 rgba(34, 197, 94, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .kc-dot {
+    animation: none;
+  }
+}
+
+/* ---------- News ---------- */
+.news table {
+  border-collapse: separate;
+  border-spacing: 0;
+
+  th,
+  td {
+    padding: 0.7rem 0.5rem !important;
+    border-bottom: 1px dashed var(--kc-border);
+    vertical-align: top;
+  }
+
+  tr:last-child th,
+  tr:last-child td {
+    border-bottom: 0;
+  }
+
+  th {
+    font-family: var(--kc-font-mono);
+    font-size: 0.78rem;
+    font-weight: 500;
+    color: var(--kc-accent);
+    white-space: nowrap;
+  }
+}
+
+/* ---------- Cards (projects, CV, repositories) ---------- */
+.card {
+  background-color: var(--global-card-bg-color);
+  border: 1px solid var(--kc-border) !important;
+  border-radius: var(--kc-radius) !important;
+  box-shadow: var(--kc-shadow);
+  overflow: hidden;
+}
+
+.hoverable,
+.projects .card {
+  transition:
+    transform 0.2s ease,
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.hoverable:hover,
+.projects a:hover .card {
+  transform: translateY(-3px);
+  border-color: var(--kc-accent) !important;
+  box-shadow: var(--kc-shadow) !important;
+}
+
+.projects {
+  .card {
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      inset: 0 0 auto 0;
+      height: 3px;
+      background: linear-gradient(90deg, var(--kc-accent), var(--kc-accent-2));
+      opacity: 0.85;
+    }
+  }
+
+  .card-title {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--global-text-color);
+  }
+
+  .card-text {
+    font-size: 0.9rem;
+    color: var(--global-text-color-light);
+  }
+
+  a:hover {
+    text-decoration: none;
+  }
+}
+
+/* Inline code used as tech tags on project pages */
+.post article p > code {
+  font-size: 0.8rem;
+  padding: 0.15rem 0.45rem;
+  border-radius: 6px;
+  border: 1px solid var(--kc-border);
+  background: var(--kc-accent-soft);
+  color: var(--global-text-color);
+}
+
+/* ---------- CV ---------- */
+.cv {
+  .card {
+    margin-bottom: 1.25rem;
+  }
+
+  .card-title {
+    font-family: var(--kc-font-mono);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: var(--kc-accent);
+  }
+
+  .badge {
+    font-family: var(--kc-font-mono);
+    font-weight: 500 !important;
+    background: var(--kc-accent-soft) !important;
+    color: var(--kc-accent) !important;
+    border: 1px solid var(--kc-border);
+    border-radius: 6px;
+  }
+
+  .list-group-item {
+    background: transparent;
+    border-color: var(--kc-border);
+  }
+}
+
+/* ---------- Publications ---------- */
+.publications {
+  .abbr .badge {
+    font-family: var(--kc-font-mono);
+    border-radius: 6px;
+  }
+
+  .links a.btn {
+    font-family: var(--kc-font-mono);
+    border-radius: 6px;
+    border: 1px solid var(--kc-border);
+  }
+
+  .links a.btn:hover {
+    border-color: var(--kc-accent);
+    color: var(--kc-accent);
+  }
+}
+
+/* ---------- Social ---------- */
+.social {
+  .contact-icons {
+    font-size: 2.2rem !important;
+
+    a {
+      transition:
+        color 0.15s ease,
+        transform 0.15s ease;
+    }
+
+    a:hover {
+      color: var(--kc-accent) !important;
+      transform: translateY(-2px);
+    }
+  }
+
+  .contact-note {
+    font-family: var(--kc-font-mono);
+    font-size: 0.8rem;
+  }
+}
+
+/* ---------- Footer ---------- */
+footer.fixed-bottom,
+footer.sticky-bottom {
+  background: var(--kc-nav-bg) !important;
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-top: 1px solid var(--kc-border);
+  font-family: var(--kc-font-mono);
+  font-size: 0.72rem;
+}
+
+/* ---------- Back to top ---------- */
+#back-to-top {
+  background: var(--kc-accent) !important;
+  color: var(--global-bg-color) !important;
+}

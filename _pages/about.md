@@ -2,33 +2,36 @@
 layout: about
 title: about
 permalink: /
-subtitle: <a href='#'>Affiliations</a>. Address. Contacts. Motto. Etc.
+subtitle: Software Engineer · Backend & Distributed Systems · Dhaka, Bangladesh
 
+# To show a photo: put it in assets/img/ (e.g. assets/img/prof_pic.jpg) and uncomment `image` below.
 profile:
   align: right
-  image: prof_pic.jpg
-  image_circular: false # crops the image to make it circular
+  # image: prof_pic.jpg
+  image_circular: true
   more_info: >
-    <p>555 your office number</p>
-    <p>123 your address street</p>
-    <p>Your City, State 12345</p>
+    <p class="kc-status"><span class="kc-dot"></span> Software Engineer @ Riseup Labs</p>
 
-selected_papers: true # includes a list of papers marked as "selected={true}"
-social: true # includes social icons at the bottom of the page
+selected_papers: true # shows papers marked selected={true} in _bibliography/papers.bib
+social: true # shows the icons from _data/socials.yml
 
 announcements:
-  enabled: true # includes a list of news items
-  scrollable: true # adds a vertical scroll bar if there are more than 3 news items
-  limit: 5 # leave blank to include all the news in the `_news` folder
+  enabled: true # shows items from the _news folder
+  scrollable: true
+  limit: 5
 
 latest_posts:
-  enabled: true
-  scrollable: true # adds a vertical scroll bar if there are more than 3 new posts items
-  limit: 3 # leave blank to include all the blog posts
+  enabled: false # set to true once you write blog posts in _posts/
+  scrollable: true
+  limit: 3
 ---
 
-Write your biography here. Tell the world about yourself. Link to your favorite [subreddit](https://www.reddit.com). You can put a picture in, too. The code is already in, just name your picture `prof_pic.jpg` and put it in the `img/` folder.
+<p class="kc-lead">I build <strong>backends that hold up under load</strong>: scalable APIs, microservices and AI-powered systems, with a focus on concurrency, reliability and clean architecture.</p>
 
-Put your address / P.O. box / other info right below your picture. You can also disable any of these elements by editing `profile` property of the YAML header of your `_pages/about.md`. Edit `_bibliography/papers.bib` and Jekyll will render your [publications page](/al-folio/publications/) automatically.
+I'm a software engineer at **Riseup Labs**, where I design backend systems from scratch. I also consult for **Neoscoder**, leading B2B and third-party integrations for Metromart Online. Before that, at **Mediusware**, I architected a gRPC-based car-auction platform, built a RAG-powered AI app server, and shipped serverless and GraphQL services.
 
-Link to your social media connections, too. This theme is set up to use [Font Awesome icons](https://fontawesome.com/) and [Academicons](https://jpswalsh.github.io/academicons/), like the ones below. Add your Facebook, Twitter, LinkedIn, Google Scholar, or just disable all of them.
+I mostly write **Go**, **Node.js** and **Rust**. I've also done machine-learning research: I helped curate a dataset of ancient Gupta coins for counterfeit detection, which was published in _Data in Brief_. I studied Computer Science & Engineering at **Presidency University** and competed at the **ICPC Asia Dhaka Regional**.
+
+<div class="kc-stack">
+  <span>Go</span><span>Node.js</span><span>Rust</span><span>Python</span><span>Nest.js</span><span>Gin</span><span>Actix-web</span><span>FastAPI</span><span>gRPC</span><span>PostgreSQL</span><span>Redis</span><span>MongoDB</span><span>Docker</span><span>AWS</span><span>Microservices</span><span>RAG / LLMs</span>
+</div>

@@ -1,189 +1,132 @@
+# Your CV, rendered on the /cv/ page.
+# Section names (Experience, Education, ...) are free text. Each entry type
+# (company/position, institution/area, name/keywords, ...) picks the matching layout.
+# Dates: use YYYY or YYYY-MM. Leave end_date out to show "Present".
 cv:
-  name: Albert Einstein
-  label: Scientist
-  email: einstein@example.com
-  location: Princeton, NJ
-  image: ""
-  summary: A German-born theoretical physicist, widely ranked among the greatest and most influential scientists of all time
+  name: Kalin Chakma
+  label: Software Engineer
+  email: none.kalin.chakma@gmail.com
+  location: Dhaka, Bangladesh
+  summary: >
+    Software Engineer experienced in building scalable web applications, microservices, and AI-powered
+    solutions. Proficient in Golang, Node.js, and Rust, with strong expertise in backend development,
+    system design, and backend architecture. Skilled in building high-performance services, RESTful and
+    gRPC APIs, and cloud-native solutions with a focus on concurrency and reliability.
 
   social_networks:
-    - network: X
-      username: AlbertEinstein
     - network: GitHub
-      username: example
-    - network: LinkedIn
-      username: example
-
-  address:
-    street: 2712 Broadway St
-    city: San Francisco
-    region: California
-    postalCode: CA 94115
-    countryCode: US
+      username: kalinchkma
 
   sections:
-    Education:
-      - institution: University of Zurich
-        location: Zurich, Switzerland
-        url: https://www.uzh.ch/
-        area: Physics
-        studyType: PhD
-        start_date: 1900
-        end_date: 1905
-        score: ""
-        courses: "Theory of Relativity"
-        highlights:
-          - Description 1.
-          - Description 2.
-
-      - institution: Eidgenössische Technische Hochschule
-        location: Zurich, Switzerland
-        area: Physics
-        studyType: Federal teaching diploma
-        start_date: 1896
-        end_date: 1900
-        highlights:
-          - Description 1.
-          - Description 2.
-
     Experience:
-      - company: Institute for Advanced Study, Princeton University
-        position: Professor of Theoretical Physics
-        location: Princeton University, NJ
-        start_date: 1933
-        end_date: 1955
-        summary: Teaching at Palmer Physical Laboratory (now 302 Frist Campus Center). While not a professor at Princeton, I associated with the physics professors and continued to give lectures on campus.
+      - company: Neoscoder (consulting through Riseup)
+        position: Software Engineer / IT Consultant
+        location: Dhaka, Bangladesh
+        start_date: 2026-06
         highlights:
-          - Relativity
-          - Description 2.
+          - Software engineering consultant who troubleshoots, enhances and integrates business-critical products and services.
+          - Supports B2B integrations for Metromart Online with major partners including Robi, Grameenphone (GP) and City Bank.
+          - Leads and supports integrations with third-party platforms such as foodpanda and Foodi, keeping API communication and data synchronisation reliable.
+          - Develops, troubleshoots and optimises Point-of-Sale (POS) systems, resolving technical issues and improving reliability.
 
-      - company: California Institute of Technology
-        position: Visiting Professor
-        location: Pasadena, California, US
-        start_date: 1933
-        end_date: 1933
+      - company: Riseup Labs
+        position: Software Engineer
+        location: Dhaka, Bangladesh
+        start_date: 2026-02
         highlights:
-          - Description 1.
-          - Description 2.
+          - "**Backend architecture:** designed the backend project structure from scratch, including the database layer, service communication and how the codebase scales."
+          - Built a multi-driver file upload module for AWS S3, Azure Blob Storage, Google Cloud Storage and local storage behind a single shared interface.
+          - Set up a cache manager, JWT authentication with refresh tokens, and a security layer covering route guards, interceptors and CORS.
+          - "**Headless CMS (insurance platform):** set up content types, data relationships and role-based access for a large-scale CMS."
+          - Added a Redis caching layer to lower database load and speed up API responses.
+          - Built a scheduled media backup system and a transactional/event-based email notification system.
+          - Implemented API access validation, rate limiting and request sanitisation across the platform.
+          - Improved performance through query optimisation, proper indexing and smaller payloads.
 
-      - company: Kaiser Wilhelm Institute for Physics
-        position: Director
-        location: Berlin, Germany
-        start_date: 1917
-        end_date: 1933
-
-      - company: Karl-Ferdinand University
-        position: Professor of Theoretical Physics
-        location: Prague, Czechoslovakia
-        start_date: 1911
-        end_date: 1917
-
-      - company: University of Zurich
-        position: Associate Professor of Theoretical Physics
-        location: Zurich, Switzerland
-        start_date: 1909
-        end_date: 1911
-
-    Volunteer:
-      - company: People's Climate March
-        position: Lead Organizer
-        location: Zurich, Switzerland
-        start_date: 2014-04-01
-        end_date: 2015-07-01
-        summary: Lead organizer for the New York City branch of the People's Climate March, the largest climate march in history.
+      - company: Mediusware Ltd
+        position: Software Engineer
+        location: Dhaka, Bangladesh
+        start_date: 2024
+        end_date: 2026-01
         highlights:
-          - "Awarded 'Climate Hero' award by Greenpeace for my efforts organizing the march."
-          - "Men of the year 2014 by Time magazine"
+          - Architected a car-auction platform with microservices and gRPC; built API and WebSocket servers, a PDF parsing service, Redis caching, PostgreSQL storage and a CDN.
+          - Created an AI-driven mobile app server with RAG, vector search and LLM integration.
+          - Developed serverless functions, a GraphQL API for ad automation and a network printer scanning and management service.
+          - Built a full-stack application that parses Evernote files, integrates with the Evernote API and renders notebook content on the web.
+          - Built a rich-text editor for dynamic content management.
+          - Designed responsive frontend interfaces from Figma, integrated backend APIs, and optimised legacy code for stability and performance.
 
-    Awards:
-      - title: Nobel Prize in Physics
-        authors:
-          - "Royal Swedish Academy of Sciences"
-        date: 1921-11-01
-        awarder: Royal Swedish Academy of Sciences
-        url: https://www.nobelprize.org/prizes/physics/1921/einstein/biographical/
-        summary: The Nobel Prizes are five separate prizes that, according to Alfred Nobel's will of 1895, are awarded to 'those who, during the preceding year, have conferred the greatest benefit to humankind.'
+      - company: Self-Employed
+        position: Researcher
+        location: Dhaka, Bangladesh
+        start_date: 2023
+        end_date: 2024
+        highlights:
+          - Collaborated with a professor to curate the Gupta coin dataset for ML training.
+          - Collected and cleaned data from various sources and auctions.
+          - Trained ResNet-15, ResNet-152 and custom models to classify real vs. fake coins.
 
-      - title: Max Planck Medal
-        authors:
-          - "German Physical Society"
-        date: 2029
-        awarder: German Physical Society
-        summary: Awarded for outstanding scientific achievement
+      - company: Freelance
+        position: Web Developer
+        location: Remote
+        start_date: 2023
+        end_date: 2024
+        highlights:
+          - Built a game-currency marketplace with real-time features, deployed on a VPS behind a reverse proxy.
+          - Developed a full-stack physiotherapy clinic app, deployed via cPanel.
+
+    Education:
+      - institution: Presidency University
+        location: Dhaka, Bangladesh
+        area: Computer Science and Engineering
+        studyType: B.Sc.
+        start_date: 2019
+        end_date: 2024
+        highlights:
+          - "Concentrations: Software Development, Machine Learning, Programming"
 
     Publications:
-      - title: Zur Elektrodynamik bewegter Körper
+      - title: A novel dataset of Gupta archer type coins for machine learning-based classification
         authors:
-          - Albert Einstein
-        publisher: Annalen der Physik
-        releaseDate: 1905-06-30
-        url: https://en.wikisource.org/wiki/Translation:On_the_Electrodynamics_of_Moving_Bodies
-        summary: It concerned an interpretation of the Michelson–Morley experiment and the properties of light and time. Special relativity incorporates the principle that the speed of light is the same for all inertial observers regardless of the state of motion of the source.
+          - I. A. Mamoon, Z. S. Siam, A. A. A. Galib, T. Dango, **K. Chakma**, P. Dev, R. T. Hasan, M. E. H. Chowdhury
+        publisher: Data in Brief, vol. 57, 110934
+        releaseDate: 2024-09-17
+        url: https://doi.org/10.1016/j.dib.2024.110934
 
-      - title: Über einen die Erzeugung und Verwandlung des Lichtes betreffenden heuristischen Gesichtspunkt
-        authors:
-          - Albert Einstein
-        publisher: Annalen der Physik
-        releaseDate: 1905-03-18
-        url: https://de.wikisource.org/wiki/Über_einen_die_Erzeugung_und_Verwandlung_des_Lichtes_betreffenden_heuristischen_Gesichtspunkt
-        summary: In the second paper, he applied the quantum theory to light to explain the photoelectric effect. In particular, he used the idea of light quanta (photons) to explain experimental results, but stressed the importance of the experimental results. The importance of his work on the photoelectric effect earned him the Nobel Prize in Physics in 1921.
-
-      - title: Die Grundlage der allgemeinen Relativitätstheorie
-        authors:
-          - Albert Einstein
-        publisher: Annalen der Physik
-        releaseDate: 1916-03-20
-        url: https://de.wikisource.org/wiki/Die_Grundlage_der_allgemeinen_Relativitätstheorie
-        summary: The publication of the theory of general relativity made him internationally famous. He was professor of physics at the universities of Zurich (1909–1911) and Prague (1911–1912), before he returned to ETH Zurich (1912–1914).
+    Awards:
+      - title: ICPC Asia Dhaka Regional, Contestant
+        date: 2022-10
+        awarder: Team PU_HUNTERS, Presidency University
 
     Skills:
-      - name: Physics
-        level: Master
-        icon: fa-solid fa-hashtag
-        keywords: "Quantum Mechanics, Quantum Computing, Quantum Information, Quantum Cryptography, Quantum Communication, Quantum Teleportation"
-
-    Languages:
-      - name: German
-        summary: "Native speaker"
-
-      - name: English
-        summary: "Fluent"
-
-    Interests:
-      - name: Physics
-        icon: fa-solid fa-tag
-        keywords: "Quantum Mechanics, Quantum Computing, Quantum Information, Quantum Cryptography, Quantum Communication, Quantum Teleportation"
-
-    Certificates:
-      - name: Machine Learning
-        date: 2018-01-01
-        issuer: Stanford University
-        icon: fa-solid fa-location-dot
-
-      - name: Quantum Computing
-        date: 2018-01-01
-        issuer: Stanford University
-        icon: fa-solid fa-tag
-
-      - name: Quantum Information
-        date: 2018-01-01
-        issuer: Stanford University
-        icon: fa-solid fa-envelope
+      - name: Languages
+        icon: fa-solid fa-code
+        keywords: "Go, Node.js, Rust, Python, C/C++"
+      - name: Frameworks
+        icon: fa-solid fa-layer-group
+        keywords: "Express.js, Nest.js, Gin, Gorm, Actix-web, FastAPI, ClamAV, Pandas, PyTorch, NumPy"
+      - name: Databases
+        icon: fa-solid fa-database
+        keywords: "PostgreSQL, MongoDB, MySQL, Redis"
+      - name: Cloud / DevOps
+        icon: fa-solid fa-cloud
+        keywords: "AWS (S3, Lambda), Docker, Nginx, Git, CI/CD"
+      - name: Technical
+        icon: fa-solid fa-diagram-project
+        keywords: "System Design, Microservices, Serverless, Backend Engineering, ML / DL, AI"
 
     Projects:
-      - name: Quantum Computing
-        summary: Quantum computing is the use of quantum-mechanical phenomena such as superposition and entanglement to perform computation. Computers that perform quantum computations are known as quantum computers.
+      - name: Geko
+        summary: Go project scaffold for high-performance server-native applications with built-in mail, ORM and routing.
         highlights:
-          - Quantum Teleportation
-          - Quantum Cryptography
-        start_date: 2018-01-01
-        end_date: 2018-01-01
+          - "Source: [github.com/kalinchkma/geko](https://github.com/kalinchkma/geko)"
+      - name: Authenticity Detection of Ancient Bengal Coins
+        summary: Web app using deep learning models to detect fake ancient Bengal coins.
+        highlights:
+          - "Source: [github.com/kalinchkma/Automatic-Authenticity-Detection-of-Ancient-Bengal-Coins](https://github.com/kalinchkma/Automatic-Authenticity-Detection-of-Ancient-Bengal-Coins)"
 
-    References:
-      - name: Professor John Doe
-        icon: fa-solid fa-laptop
-        reference: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit.
-
-      - name: Professor Jane Smith
-        icon: fa-solid fa-thumbtack
-        reference: Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam condimentum, diam quis convallis euismod, arcu mi ullamcorper lorem, a vestibulum nunc magna at sem. Sed in risus ac felis varius blandit.
+    Languages:
+      - name: Bangla
+        summary: Proficient
+      - name: English
+        summary: Medium

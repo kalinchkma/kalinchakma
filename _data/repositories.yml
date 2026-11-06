@@ -1,14 +1,13 @@
+# GitHub profile + repositories shown on the /repositories/ page.
 github_users:
-  - torvalds
-  - alshedivat
+  - kalinchkma
 
 repo_description_lines_max: 2
 
 github_repos:
-  - alshedivat/al-folio
-  - jekyll/jekyll
-  - twbs/bootstrap
-  - jquery/jquery
-  - FortAwesome/Font-Awesome
-  - mathjax/MathJax
-  - jpswalsh/academicons
+  - kalinchkma/geko
+  - kalinchkma/geko-tools
+  - kalinchkma/Automatic-Authenticity-Detection-of-Ancient-Bengal-Coins
+  - kalinchkma/deep_relay
+  - kalinchkma/printers
+  - kalinchkma/popcorn
