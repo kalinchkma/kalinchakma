@@ -19,17 +19,17 @@ cv:
 
   sections:
     Experience:
-      - company: Neoscoder (consulting through Riseup)
+      - company: IT Consulting Engagement
         position: Software Engineer / IT Consultant
         location: Dhaka, Bangladesh
         start_date: 2026-06
         highlights:
           - Software engineering consultant who troubleshoots, enhances and integrates business-critical products and services.
-          - Supports B2B integrations for Metromart Online with major partners including Robi, Grameenphone (GP) and City Bank.
-          - Leads and supports integrations with third-party platforms such as foodpanda and Foodi, keeping API communication and data synchronisation reliable.
+          - Supports B2B integrations for an online e-commerce platform with major partners, including telecom operators and a commercial bank.
+          - Leads and supports integrations with third-party food-delivery platforms, keeping API communication and data synchronisation reliable.
           - Develops, troubleshoots and optimises Point-of-Sale (POS) systems, resolving technical issues and improving reliability.
 
-      - company: Riseup Labs
+      - company: Software Company
         position: Software Engineer
         location: Dhaka, Bangladesh
         start_date: 2026-02
@@ -43,7 +43,7 @@ cv:
           - Implemented API access validation, rate limiting and request sanitisation across the platform.
           - Improved performance through query optimisation, proper indexing and smaller payloads.
 
-      - company: Mediusware Ltd
+      - company: Software Company
         position: Software Engineer
         location: Dhaka, Bangladesh
         start_date: 2024

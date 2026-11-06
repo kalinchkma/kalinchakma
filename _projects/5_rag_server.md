@@ -6,7 +6,7 @@ importance: 5
 category: work
 ---
 
-_Professional project at Mediusware Ltd._
+_Professional project._
 
 The server behind an AI-powered mobile app:
 

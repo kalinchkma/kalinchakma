@@ -1,13 +1,13 @@
 ---
 layout: page
-title: Metromart B2B Integrations
-description: B2B and third-party integrations connecting Metromart Online with telecom, banking and food-delivery partners.
+title: E-commerce B2B Integrations
+description: B2B and third-party integrations connecting an e-commerce platform with telecom, banking and food-delivery partners.
 importance: 6
 category: work
 ---
 
-_Consulting work at Neoscoder, through Riseup._
+_Consulting work._
 
-- B2B integrations between **Metromart Online** and partners including **Robi**, **Grameenphone** and **City Bank**
-- Leading integrations with **foodpanda** and **Foodi**, keeping API communication and data synchronisation reliable
+- B2B integrations between an **online grocery / e-commerce platform** and major **telecom operators** and a **commercial bank**
+- Leading integrations with **food-delivery platforms**, keeping API communication and data synchronisation reliable
 - Troubleshooting and optimising **point-of-sale (POS)** systems to improve reliability

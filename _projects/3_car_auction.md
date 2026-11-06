@@ -6,7 +6,7 @@ importance: 3
 category: work
 ---
 
-_Professional project at Mediusware Ltd._
+_Professional project._
 
 I designed the architecture for a car-auction platform built as a set of microservices.
 

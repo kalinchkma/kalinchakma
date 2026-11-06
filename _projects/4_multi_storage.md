@@ -6,7 +6,7 @@ importance: 4
 category: work
 ---
 
-_Professional project at Riseup Labs._
+_Professional project._
 
 A file upload module behind one shared interface, with drivers for:
 
