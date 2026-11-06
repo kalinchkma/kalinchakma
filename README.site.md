@@ -2,7 +2,7 @@
 
 My personal portfolio: projects, experience, publications and CV.
 
-**Live site:** https://kalinchkma.github.io/kalinchakma/
+**Live site:** https://kalinchkma.github.io/
 
 Built with [Jekyll](https://jekyllrb.com/) on the [al-folio](https://github.com/alshedivat/al-folio) starter (v1.x), with a custom design. Deployed to GitHub Pages by GitHub Actions (`.github/workflows/jekyll.yml`).
 
@@ -215,7 +215,7 @@ You need [Docker Desktop](https://www.docker.com/products/docker-desktop/):
 docker compose up
 ```
 
-Then open **http://localhost:8080/kalinchakma/**. Most changes reload automatically. Changes to `_config.yml` restart the server, which takes a few seconds.
+Then open **http://localhost:8080/**. Most changes reload automatically. Changes to `_config.yml` restart the server, which takes a few seconds.
 
 Stop it with `Ctrl+C`, or run `docker compose down`.
 
@@ -228,21 +228,18 @@ You only need to do this once.
 1. **The repo must be public** (free accounts can't publish GitHub Pages from a private repo): **Settings → General → Danger Zone → Change visibility → Public**.
 2. **Settings → Pages → Build and deployment → Source: GitHub Actions.**
 3. Push to `main`, or open **Actions → Deploy Jekyll site to Pages → Run workflow**. Wait for both jobs (`build`, `deploy`) to show a green ✓.
-4. Your site is live at **https://kalinchkma.github.io/kalinchakma/**. The deploy job also shows the link.
+4. Your site is live at **https://kalinchkma.github.io/**. The deploy job also shows the link.
 
-### Want the shorter URL `https://kalinchkma.github.io/`?
+### Why the repo is named `kalinchkma.github.io`
 
-1. Rename the repo to **`kalinchkma.github.io`** (Settings → General → Repository name).
-2. In `_config.yml`, set `baseurl:` to empty (keep the line itself):
-   ```yaml
-   url: https://kalinchkma.github.io
-   baseurl:
-   ```
-3. Update the local git remote:
-   ```bash
-   git remote set-url origin git@github.com:kalinchkma/kalinchkma.github.io.git
-   ```
-4. Push. The workflow picks up the new path automatically. Local preview is then at http://localhost:8080/.
+GitHub serves a repo named `<username>.github.io` at the root address `https://<username>.github.io/`. Any other repo name is served under a sub-path (`https://<username>.github.io/<repo>/`). That's why `_config.yml` has:
+
+```yaml
+url: https://kalinchkma.github.io
+baseurl: # empty, keep the line
+```
+
+If you ever rename the repo, update `baseurl` to `/<new-repo-name>`. Otherwise the CSS and links break.
 
 ---
 

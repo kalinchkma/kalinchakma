@@ -1,4 +1,4 @@
-> **Note for this repo:** this is a personal site generated from the al-folio starter. Its baseurl is `/kalinchakma` (not `/al-folio`), and local overrides such as `assets/css/main.scss` are intentional. See `CLAUDE.md` and `README.md`.
+> **Note for this repo:** this is a personal site generated from the al-folio starter. Its baseurl is empty (user site at https://kalinchkma.github.io/, not `/al-folio`), and local overrides such as `assets/css/main.scss` are intentional. See `CLAUDE.md` and `README.site.md`.
 
 # Agent Guidelines for al-folio (v1.x)
 

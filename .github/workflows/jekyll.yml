@@ -12,6 +12,7 @@ on:
     branches: ["main"]
     paths-ignore:
       - "README.md"
+      - "README.site.md"
       - "docs/**"
       - "AGENTS.md"
       - "CLAUDE.md"
@@ -67,8 +68,8 @@ jobs:
         uses: actions/configure-pages@v5
 
       - name: Build with Jekyll
-        # base_path comes from the repo name (/kalinchakma now, empty if renamed to kalinchkma.github.io)
-        run: bundle exec jekyll build --baseurl "${{ steps.pages.outputs.base_path }}"
+        # url/baseurl come from _config.yml (empty baseurl = served from https://kalinchkma.github.io/)
+        run: bundle exec jekyll build
         env:
           JEKYLL_ENV: production
 
