@@ -35,24 +35,24 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v7
 
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: "3.3.5" # Gemfile.lock is bundled with Bundler 4, which needs Ruby >= 3.2
+          ruby-version: "3.3" # latest 3.3.x on the runner; Gemfile.lock uses Bundler 4, which needs Ruby >= 3.2
           bundler-cache: true # runs 'bundle install' and caches gems
           cache-version: 0 # bump to force a fresh gem download
 
       - name: Setup Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v7
         with:
           python-version: "3.13"
 
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v7
         with:
-          node-version: "20"
+          node-version: "22"
           cache: "npm"
 
       - name: Install build tools
